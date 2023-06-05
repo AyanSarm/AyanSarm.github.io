@@ -1,0 +1,672 @@
+@font-face {
+  font-family: "Thunderman font";
+  src: url(./fonts/Thunderman.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Thunderman font";
+  scroll-behavior: smooth;
+}
+
+/* main page */
+
+body {
+  background: url(./images/backgroundtile.jpg);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.burger-btn {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  z-index: 2;
+}
+
+.burger-btn span {
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  left: 5px;
+  transition: 0.5s, opacity 0.5s, background-color 0.5s;
+}
+
+.burger-btn span:nth-child(1) {
+  transform: translateY(-10px);
+}
+
+.burger-btn span:nth-child(3) {
+  transform: translateY(10px);
+}
+
+.header.open .burger-btn span:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+
+.header.open .burger-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.header.open .burger-btn span:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.header_logo img {
+  width: 200px;
+}
+
+.nav_links {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  font-size: 25px;
+  font-weight: 500;
+  color: #0d1730;
+  text-decoration: none;
+  position: relative;
+}
+
+.dropdown {
+  float: right;
+}
+
+.dropdown .dropbtn {
+  font-size: 25px;
+  font-weight: 500;
+  color: #0d1730;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  background-color: #a0dd5a;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  font-size: 25px;
+  font-weight: 500;
+  color: #0d1730;
+  padding: 5px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #9ccf61;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.welcome {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 80px;
+}
+
+.welcome_img {
+  width: 40%;
+}
+
+.welcome_text-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 35px;
+  font-weight: 500;
+  align-self: flex-end;
+}
+
+.welcome_text-left img {
+  margin-left: 30px;
+  width: 250px;
+}
+
+.welcome_text-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  font-size: 35px;
+  font-weight: 500;
+  align-self: flex-end;
+}
+
+.welcome_text-right img {
+  margin-right: 50px;
+  width: 250px;
+}
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 200px;
+}
+
+.about_text {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 36px;
+  width: 800px;
+}
+
+.about-img {
+  height: 400px;
+  border-radius: 15px;
+}
+
+.about_house {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 150px;
+}
+
+.about_house-text {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 36px;
+  width: 800px;
+}
+
+.about_house-img {
+  height: 400px;
+  border-radius: 15px;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.slider_card {
+  width: 300px;
+  height: 500px;
+  position: relative;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.card_front{
+  background-color: #a0dd5a;
+  border-radius: 15px;
+}
+
+.card_front img {
+  width: 70%;
+  height: 80%;
+}
+
+.card_front h1 {
+  font-size: 23px;
+}
+
+.card_front .Lumpy_Space_Princess {
+  margin-top: 35px;
+  height: 70%;
+}
+
+.video {
+  margin-bottom: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video iframe {
+  width: 50%;
+  height: 550px;
+  border-radius: 15px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #a0dd5a;
+  height: 200px;
+  padding: 0 40px;
+}
+
+.footer_logo img {
+  width: 200px;
+}
+
+.footer_links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_links a {
+  font-size: 20px;
+  font-weight: 500;
+  color: #0d1730;
+  padding: 5px 0;
+  text-decoration: none;
+}
+
+/* seasons */
+
+.S1_about,
+.S2_about,
+.S3_about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.S1_text,
+.S2_text,
+.S3_text {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 35px;
+  width: 900px;
+  text-align: center;
+}
+
+.S1_characters,
+.S2_characters,
+.S3_characters {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 150px;
+}
+
+.text {
+  position: absolute;
+  display: flex;
+  align-self: flex-start;
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: -50px;
+}
+
+.characters_card {
+  width: 350px;
+  height: 500px;
+  position: relative;
+  margin-top: 15px;
+}
+
+.card_front,
+.card_back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #a0dd5a;
+  border-radius: 15px;
+  transition: 0.5s;
+}
+
+.card_front img {
+  width: 70%;
+  height: 80%;
+}
+
+.card_front .minerva,
+.card_front .shoko,
+.card_front .elise {
+  width: 50%;
+  height: 80%;
+}
+
+.card_front .gunter {
+  height: 70%;
+  width: 65%;
+}
+
+.card_front .HunsonAbadeer {
+  width: 40%;
+}
+
+.card_front .snail {
+  height: 50%;
+}
+
+.card_back {
+  opacity: 0;
+  padding: 20px;
+  transform: rotateY(-180deg);
+  background: #a0dd5a;
+  text-align: center;
+}
+
+.card_back h1 {
+  font-size: 25px;
+}
+
+.card_back p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.characters_card:hover > .card_front {
+  transform: rotateY(180deg);
+}
+
+.characters_card:hover > .card_back {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.S1_video,
+.S2_video,
+.S3_video {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.S1_video iframe,
+.S2_video iframe,
+.S3_video iframe {
+  width: 50%;
+  height: 550px;
+  border-radius: 15px;
+}
+
+@media (max-width: 1440px) {
+  .about,
+  .about_house {
+    padding: 0 30px 0 30px;
+  }
+
+  .about_text {
+    font-size: 24px;
+    line-height: 36px;
+    width: 780px;
+    margin-right: 50px;
+  }
+
+  .about_house-text {
+    font-size: 24px;
+    line-height: 36px;
+    width: 780px;
+    margin-left: 50px;
+  }
+
+  .about-img,
+  .about_house-img {
+    height: 300px;
+  }
+
+  .characters_card {
+    width: 350px;
+    height: 500px;
+  }
+
+  .video iframe {
+    width: 60%;
+    height: 500px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .welcome_text-left,
+  .welcome_text-right {
+    font-size: 30px;
+  }
+
+  .welcome_text-left img {
+    margin-left: 20px;
+    width: 180px;
+  }
+
+  .welcome_text-right img {
+    margin-right: 40px;
+    width: 180px;
+  }
+
+  .about,
+  .about_house {
+    padding: 0 30px 0 30px;
+  }
+
+  .about_text {
+    font-size: 18px;
+    line-height: 30px;
+    width: 450px;
+    margin-right: 50px;
+  }
+
+  .about_house-text {
+    font-size: 18px;
+    line-height: 30px;
+    width: 450px;
+    margin-left: 50px;
+  }
+
+  .about-img,
+  .about_house-img {
+    height: 250px;
+  }
+
+  .slider_card {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+
+  .characters_card {
+    width: 350px;
+    height: 500px;
+  }
+
+  .video iframe {
+    width: 70%;
+    height: 400px;
+  }
+
+  .S1_video iframe,
+  .S2_video iframe,
+  .S3_video iframe {
+    width: 70%;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .burger-btn {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    left: -100vw;
+    top: 0;
+    width: 100vw;
+    background-color: #a0dd5a;
+    padding: 110px 20px 20px 60px;
+    transition: 0.5s;
+    z-index: 1;
+  }
+
+  nav ul li,
+  .dropdown ul li {
+    display: block;
+  }
+
+  nav ul li a {
+    color: black;
+    font-size: 21px;
+    display: block;
+    padding: 10px 0;
+  }
+
+  .dropdown {
+    float: left;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 21px;
+    color: black;
+  }
+
+  .header.open .menu {
+    transform: translateX(100%);
+  }
+
+  .welcome_text-left,
+  .welcome_text-right {
+    font-size: 25px;
+  }
+
+  .welcome_text-left img {
+    margin-left: 20px;
+    width: 130px;
+  }
+
+  .welcome_text-right img {
+    margin-right: 30px;
+    width: 130px;
+  }
+
+  .about_text {
+    margin-right: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .about_house-text {
+    margin-left: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .slider_card {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .characters_card {
+    width: 350px;
+    height: 500px;
+  }
+
+  .video iframe {
+    min-width: 350px;
+    height: 320px;
+  }
+
+  .S1_text,
+  .S2_text,
+  .S3_text {
+    font-size: 20px;
+    line-height: 32px;
+    width: 700px;
+    text-align: center;
+  }
+
+  .S1_video iframe,
+  .S2_video iframe,
+  .S3_video iframe {
+    min-width: 350px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 425px) {
+  .header {
+    padding: 0 10px;
+  }
+
+  .header_logo img {
+    width: 140px;
+  }
+
+  .welcome_img {
+    width: 80%;
+  }
+
+  .welcome_text-left,
+  .welcome_text-right {
+    display: none;
+  }
+
+  .about-img,
+  .about_house-img {
+    height: 200px;
+  }
+
+  .slider_card {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .characters_card {
+    width: 350px;
+    height: 500px;
+  }
+
+  .video iframe {
+    width: 95%;
+    height: 300px;
+  }
+
+  .footer_logo img {
+    width: 130px;
+  }
+
+  .footer_links a {
+    font-size: 18px;
+  }
+
+  .S1_text,
+  .S2_text,
+  .S3_text {
+    font-size: 18px;
+    line-height: 26px;
+    width: 750px;
+    padding: 0 10px 0 10px;
+  }
+
+  .S1_video iframe,
+  .S2_video iframe,
+  .S3_video iframe {
+    width: 95%;
+    height: 300px;
+  }
+}
